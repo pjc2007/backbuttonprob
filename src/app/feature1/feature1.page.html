@@ -1,9 +1,13 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='home'></ion-back-button>
+    </ion-buttons>
     <ion-title>feature1</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<ion-button (click)='openPage("detail1")'>Detail 1</ion-button>
+<ion-button (click)='openPage("feature2")'>Feature 2 as child</ion-button>
 </ion-content>

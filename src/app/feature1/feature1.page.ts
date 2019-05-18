@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppRoutingService } from '../app-routing.service';
+import { NavBaseParams } from '../nav-base.params';
 
 @Component({
   selector: 'app-feature1',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Feature1Page implements OnInit {
 
-  constructor() { }
+  constructor(private appRoutingService: AppRoutingService) { }
+
+  public openPage(url: string): void {
+    this.appRoutingService.navigateForward(url, new NavBaseParams());
+  }
 
   ngOnInit() {
   }

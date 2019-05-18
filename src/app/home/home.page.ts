@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Platform } from '@ionic/angular';
+import { AppRoutingService } from '../app-routing.service';
+import { NavBaseParams } from '../nav-base.params';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +15,14 @@ export class HomePage {
   /**
    *
    */
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform,
+     private appRoutingService : AppRoutingService) {
     
     
+  }
+
+  public openPage(url:string) : void {
+    this.appRoutingService.navigateForward(url, new NavBaseParams());
   }
 
   public ionViewDidEnter(): void {
