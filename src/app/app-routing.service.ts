@@ -47,6 +47,7 @@ export class AppRoutingService {
    */
   private handlePageRouting(ev: NavigationStart): void {
     try {
+      console.log('handlePageRouting');
       if (ev.url === this.rootNavigation) {
         return;
       }
@@ -73,6 +74,7 @@ export class AppRoutingService {
         this.currentNavigationForward = undefined;
         this.navigateRoot = undefined;
         
+        console.info(`redirecting to home`);
         this.router.navigateByUrl('/home');
       }
     } catch (error) {
